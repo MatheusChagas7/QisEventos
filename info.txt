@@ -1,0 +1,79 @@
+\\QISeventos
+versão - 2.1.3
+data - 25/02/18
+
+ATUALIZAÇÃO:
+add novas pessoas ao banco, pesquisas e add novas pessoas de cada categoria, apenas rj
+
+CRON_DIMINUI_DIAS_USADO.PHP (diminuir os dias do usuario caso fique sem logar) ESTÁ DESATIVADO POR ENQUANTO, para nao atrapalhar o adesão de novos usuarios e ficar diminuindo.
+
+retirar o .php mas sem atrapalhar o anuncio.php q recebe a url
+
+tentar deixar a capa dos usuarios centralizada, sem cortar.. talvez jquery
+
+DESAFIOS:
+- fazer uma tabela q registra o historico de pesquisa do usuario, e com uma media mostrar resultados e propaganda mais relevante ao gosto do usuario
+- Colocar para a pessoa poder escolher mais de 1 cidade, fazer array.
+- colocar notificacao no safari em IOS, MAC OS aceita de boa
+- vencer..
+
+INFO:
+
+TEMOS 4 PROPAGANDAS NO SLIDE PRINCIPAL E 08 PROPAGANDAS NO SLIDE RODAPE (FEITO POR NOS) AS PROPAGANDAS FEITA POR NOS (SLIDE RODAPE) VAI ATE DIA 8 DO MES Q VEM
+NOS TEMOS 85 PESSOAS DO RJ, E 7 FORA DO ESTADO
+
+- O arquivo de cache estará dentro do assets/php/
+- A funcao fechar() da notificacao em primeiro plano/alert, esta no sis_js.js
+- As funcoes de visualizar notificação e excluir, estao no temporizador.js
+- em anunciar, tanto front quanto php ou js, o anuncio6 é na verdade o 5 versão mobile
+- O script em javascript na página anunciar.php está interno para carregar mais rápido.
+- Caso altere alguma informação do premium quanto as vantagens dos pacotes, mudar no banco ou perfil sobre os detalhes das vantagens(tamanhos e etc.)
+- Tempo de token face/twitter/google.. 2 meses ( a criacao das api de google face e twitter foram dia 01/02/18 ), o twitter php é feito da consumer key e secet.
+- A pasta n minificado (tanto no css quanto no js) contem alguns (não todos) arquivos em sua versão padrao, os arquivos usados são minificados para melhor performace.
+- Existe 3 arquivos de cache: Cache - páginas que podem ser acessadas pelo público, Cache_visitante - apenas pessoas logadas, Cache_login - para as páginas de login e cadastro, diferentes por causa da conexão com twitter(php), face e google
+- No anuncio pega-se via PHP o numero de likes da página (para a parte de contato para o plugin de social locker, e um numero é gerado para o de compartilhar)
+- O popup de A2HS(add to homescreen) (que explica como adicionar o site a tela inicial como um app) (http://cubiq.org/add-to-home-screen) é feita usando este script, carregará apenas se for iOS. Se for android aparecerá a mensagem padrão para baixa-lo (usando o service-worker.js na raiz). OBS: apenas nas páginas, inicio, anuncio, perfil e ajuda.
+- O CSS do A2HS, está modificado. Parece que o JS não colocava o icone do safari ao abrir no ios, apenas android, o css está colocando o icone direto na mensagem das páginas que precisam (citadas acima).
+- Os comentários na página de anuncio são exibidas na conta de quem está a aplicação do facebook. Ao carregar a página de anuncio pega-se a url, retira-se qualquer coisa após o "?" para poder carregar os comentários feitos na página. Não da para cada perfil aparecer os seus comentários em sua conta do facebook pois é necessário um codigo da aplicação para carregar o plugin de comentário do facebook.
+- Caso vá adicionar mais um espaço de propaganda (seja onde for), tem que lembrar de por o nome desse local no javascript e html de anunciar.php e anunciar_prop.js
+- No Cache (e cache_visitante) existe o codigo que se o usuario estiver logado, vai dar um update no cont_dias_desl (contador de dias usados) para o maximo(31)(no momento está 60), e colocar na data de ultimo acesso(dt_last_acess) a data atual.
+- Mensalmente verificar se o login/cadastro pelo twitter, google e face estão funcionando. O twitter normalmente da problema, entrar na conta e mudar a chave de consumo e api key e alterar nos arquivos cadastro_twitter, cadastro_anunciante_twitter e login_twitter, antes estava dando problema tambem no cache_login por causa do session_destroy parece que não dará mais este problema por ele esta comentado.
+- Existe 2 notificações (um pequeno "alert", mais uma notificação visual como facebook no canto inferior direito) e a outra é do sino, onde abre um modal com as notificações. A notificação está localizada no javascript temporizador, em que carrega as notificações dentro do modal. Ele pega do arquivo php notificacao (que busca no banco pelo arquivo resultnoti), e o javascript toma conta de carregar esta notificação dentro do modal. O temporizador tambem contem as funções de visualizar, excluir, carregar nova notificação e o som ao chegar notificação nova.
+- Ao entrar em um perfil de anuncio, é carregado o arquivo em php numeroacesso, que aumenta +1 no acesso (apenas usuario nao logado e usuarios diferente do perfil acessado somam +1 no banco).
+- Apenas usuarios logado podem classificar um perfil de anuncio, e apenas 1 vez por usuario pode classificar (o arquivo rate.php faz a média da classificação / pelo total ja armazenado no banco, e coloca a url do perfil do anuncio em um cookie, se for classificar novamente verifica se a url é igual ao cookie, apenas uma forma simples e basica para impedir usuarios de rankear sem parar).
+- Ao favoritar fica salvo no banco, o id do usuario que favoritou e o usuario favoritado, ele será mostrado no perfil na parte de "seguidores" ou "seguindo" dependendo. Arquivos de favoritar e remover é feito via jquery/ajax no perfil,anuncio e inicio, que buscam no php favoritei e remover_favorito.
+- A denuncia é apenas feita dentro do perfil do anuncio(um botão ao lado esquerdo) e apenas usuarios logados, ao clicar um modal se abre para selecionar o motivo (select) e escrever uma breve explicação (input), ao clicar é acionado um onclick no botão com a função send_den(no arquivo modal_denuncia.php). A função recebe o email do usuario logado e o id do perfil que está sendo denunciado. No arquivo denuncia.php recebe : motivo, explicação, email e id(busca o nome, url e email do denunciado) e por fim envia um email para a pagina de suporte da aplicação para veriguar a denuncia..
+
+
+CRON JOB (EXISTENTES):
+- (CRON_DIMINUI_DIAS.PHP) 1 vez por dia (as 00:00) diminui 1 dia do tempo util do pacote que o usuario cliente comprou, se for 0, retira o pacote(volta pro básico) e envia um email informando que foi expirado.
+- (CRON_VERIFICA_CONT_DIAS.PHP) 1 vez por dia (as 00:15) verifica se o dia util do tempo do pacote do usuario, se for menor ou igual a 5, envia um email para o usuario, informando que tem que renovar.
+- (CRON_DIMINUI_DIAS_USADO.PHP) 1 vez por dia (as 00:30) diminui um dia do contador de dias logados do usuario cliente (o padrao é 60),se for 15, envia um email informando que tem tantos dias ainda e que é para manter a conta atualizada, se for menor que 5, envia email todo dia, se for 0, exclui a conta.
+- (CRON_RELATORIO.PHP) 1 vez por mês, envia um email para todos os CLIENTES lhe informando seu número de acesso, número de avaliações, número de estrelas. Ou seja seu relatório. e envia o link de compra de pacote, para renovar ou obter. 
+- (CRON_VERIFICA_PROPAGANDA_EXPIROU.PHP) 1 vez por dia verifica as propagandas ativas, se a data final for menor que o dia da verificação ela será desativada e enviará um email, e ao mesmo tempo verifica as propagandas desativadas, se a diferença entre a data final for menor ou igual a 5 dias do momento da verificação envia um email (caso o usuario queira reativar a propaganda), se for maior que 5 apaga do sistema as imagens, do banco e o contador no banco. E tambem contém um while, busca as propagandas que não foram pagas ou não foram completadas, se for maior que 10 dias do termino da data, ela será excluida do banco e as imagens também.
+
+NOMECLATURA:
+	niveis-
+		1 usuario nao conectado(visitante)
+		2 usuario comum
+		3 usuario cliente
+		4 usuario anunciante que tambem é comum
+		5 usuario anunciante que tambem é cliente
+	migracao-
+		qis cadastrado por nos
+		face criado pelo face
+		twit criado pelo twitter
+		gplu criado pelo google plus
+	noticias-
+		1 nenhum
+		2 email
+		3 tudo
+		4 app/site
+	pacote_usu-
+		0 gratuito
+		1 premium
+		2 master
+	ativo (propaganda)
+		0 falta comprovar o pagamento online
+		1 rodando pelo site
+		2 desativado, esperando o termino dos 5 dias para ser excluido ou voltara ser ativo

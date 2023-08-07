@@ -1,0 +1,73 @@
+insert's into das categorias do baco
+
+INSERT INTO categoria VALUES ('','Audiovisual','Sonorização');
+INSERT INTO categoria VALUES ('','Audiovisual','Iluminação');
+INSERT INTO categoria VALUES ('','Audiovisual','Telão / Televisões / Painéis de Led');
+INSERT INTO categoria VALUES ('','Audiovisual','Filmagem');
+INSERT INTO categoria VALUES ('','Audiovisual','Filmagem c/ drone');
+INSERT INTO categoria VALUES ('','Audiovisual','Fotográfia');
+INSERT INTO categoria VALUES ('','Audiovisual','DJ');
+INSERT INTO categoria VALUES ('','Audiovisual','Técnico de áudio');
+INSERT INTO categoria VALUES ('','Audiovisual','Técnico de iluminação');
+INSERT INTO categoria VALUES ('','Audiovisual','Roadie');
+INSERT INTO categoria VALUES ('','Audiovisual','Outros');
+
+INSERT INTO categoria VALUES ('','Bandas / Grupos','Rock');
+INSERT INTO categoria VALUES ('','Bandas / Grupos','Sertanejo');
+INSERT INTO categoria VALUES ('','Bandas / Grupos','Pagode');
+INSERT INTO categoria VALUES ('','Bandas / Grupos','Samba');
+INSERT INTO categoria VALUES ('','Bandas / Grupos','MPB');
+INSERT INTO categoria VALUES ('','Bandas / Grupos','Música Portuguesa');
+INSERT INTO categoria VALUES ('','Bandas / Grupos','Música Judaica');
+INSERT INTO categoria VALUES ('','Bandas / Grupos','Banda de Casamento');
+INSERT INTO categoria VALUES ('','Bandas / Grupos','Anos 70, 80, 90');
+INSERT INTO categoria VALUES ('','Bandas / Grupos','Dança de Salão');
+INSERT INTO categoria VALUES ('','Bandas / Grupos','Rap Nacional');
+INSERT INTO categoria VALUES ('','Bandas / Grupos','MCs');
+INSERT INTO categoria VALUES ('','Bandas / Grupos','Outros');
+
+INSERT INTO categoria VALUES ('','Staff','Garçom');
+INSERT INTO categoria VALUES ('','Staff','Caixa');
+INSERT INTO categoria VALUES ('','Staff','Limpeza');
+INSERT INTO categoria VALUES ('','Staff','Barman');
+INSERT INTO categoria VALUES ('','Staff','Eletricista');
+INSERT INTO categoria VALUES ('','Staff','Segurança');
+INSERT INTO categoria VALUES ('','Staff','Bombeiro Civil');
+INSERT INTO categoria VALUES ('','Staff','Produtor');
+INSERT INTO categoria VALUES ('','Staff','Promoter');
+INSERT INTO categoria VALUES ('','Staff','Tequileiro(a)');
+INSERT INTO categoria VALUES ('','Staff','Dançarino(a)');
+INSERT INTO categoria VALUES ('','Staff','Outros');
+
+INSERT INTO categoria VALUES ('','Estruturas','Palco / Praticável');
+INSERT INTO categoria VALUES ('','Estruturas','Grade');
+INSERT INTO categoria VALUES ('','Estruturas','Banheiro Químico');
+INSERT INTO categoria VALUES ('','Estruturas','Tenda / Lona');
+INSERT INTO categoria VALUES ('','Estruturas','Mesa / Cadeira / Bistrô');
+INSERT INTO categoria VALUES ('','Estruturas','Outros');
+
+INSERT INTO categoria VALUES ('','Infantil','Animador(a)');
+INSERT INTO categoria VALUES ('','Infantil','Brinquedos');
+INSERT INTO categoria VALUES ('','Infantil','Buffet Infantil');
+INSERT INTO categoria VALUES ('','Infantil','Decorador(a)');
+INSERT INTO categoria VALUES ('','Infantil','DJ de Festa Infantil');
+INSERT INTO categoria VALUES ('','Infantil','Mesas / Móveis');
+INSERT INTO categoria VALUES ('','Infantil','Outros');
+
+INSERT INTO categoria VALUES ('','Transporte','Van');
+INSERT INTO categoria VALUES ('','Transporte','Micro-ônibus');
+INSERT INTO categoria VALUES ('','Transporte','Ônibus');
+INSERT INTO categoria VALUES ('','Transporte','Fretes');
+INSERT INTO categoria VALUES ('','Transporte','Outros');
+
+INSERT INTO categoria VALUES ('','Bebidas','Bebidas Consignadas');
+INSERT INTO categoria VALUES ('','Bebidas','Depósito');
+INSERT INTO categoria VALUES ('','Bebidas','Gelo');
+INSERT INTO categoria VALUES ('','Bebidas','Tina');
+INSERT INTO categoria VALUES ('','Bebidas','Outros');
+
+INSERT INTO categoria VALUES ('','Divulgação','Promoter');
+INSERT INTO categoria VALUES ('','Divulgação','Gráfica');
+INSERT INTO categoria VALUES ('','Divulgação','Designer');
+INSERT INTO categoria VALUES ('','Divulgação','Agência de Publicidade');
+INSERT INTO categoria VALUES ('','Divulgação','Outros');

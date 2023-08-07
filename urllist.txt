@@ -1,0 +1,13 @@
+https://www.qiseventos.com.br/inicio.php
+https://www.qiseventos.com.br/index.php
+https://www.qiseventos.com.br/ajuda.php
+https://www.qiseventos.com.br/anunciar.php
+https://www.qiseventos.com.br/contato-sobrenos.php
+https://www.qiseventos.com.br/login.php
+https://www.qiseventos.com.br/cadastro.php
+https://www.qiseventos.com.br/inicio.php?pagina=0&categoria=&sub=&search=&relevante=ORDER%20BY%20pacote_usu%20DESC,n_acesso%20DESC,rating%20DESC&estado=all&cidade=all&rpp=10
+https://www.qiseventos.com.br/inicio.php?pagina=1
+https://www.qiseventos.com.br/premium.php
+https://www.qiseventos.com.br/politica-privacidade.html
+https://www.qiseventos.com.br/cadastro_anunciante.php
+https://www.qiseventos.com.br/recuperar.php

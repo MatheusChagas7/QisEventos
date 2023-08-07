@@ -1,0 +1,5 @@
+function scrollToAnchor(aid){var aTag=$("a[name='"+aid+"']");$('html,body').animate({scrollTop:aTag.offset().top},'slow')}
+$("#btn-menu").click(function(){scrollToAnchor('buscar')});function scrollToAnchor(aid){var aTag=$("a[name='"+aid+"']");$('html,body').animate({scrollTop:aTag.offset().top},'slow')}
+$("#btn-us").click(function(){scrollToAnchor('nos')});function scrollToAnchor(aid){var aTag=$("a[name='"+aid+"']");$('html,body').animate({scrollTop:aTag.offset().top},'slow')}
+$("#seguindo").click(function(){scrollToAnchor('seguindo')});$(function(){setTimeout(function(){$('li[data-img-src]').each(function(){var src=$(this).attr('data-img-src');$('<img>').attr('src',src).appendTo('ul')})},600)});$(document).ready(function(){setInterval(taaberto,10000)});function fechar(){document.getElementById("alert-notification").style.display="none"}
+function taaberto(){if(document.getElementById("alert-notification").style.display="block"){fechar()}}
