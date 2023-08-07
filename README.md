@@ -1,4 +1,4 @@
-<p align="center"><a href="#" target="_blank"><img src="https://raw.githubusercontent.com/MatheusChagas7/QisEventos/assets/img/favicon.png" width="100"></a></p>
+<p align="center"><a href="#" target="_blank"><img src="https://raw.githubusercontent.com/MatheusChagas7/QisEventos/master/assets/img/favicon.png" width="100"></a></p>
 
 <h2 align="center">
     <b>QisEventos</b>
